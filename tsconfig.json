@@ -21,7 +21,23 @@
     "strictPropertyInitialization": false,
     "typeRoots": [
       "./node_modules/@types"
-    ]
+    ],
+    "baseUrl": "./",
+    // aqui eu estou dizendo que o meu layer existente, que será importado no primeiro path, na verdade pode ser achado no segundo path 
+    "paths": {
+      "/opt/nodejs/productsLayer": [
+        "lambda/products/layers/productsLayer/nodejs/productRepository"
+      ],
+      "/opt/nodejs/productsEventsLayer": [
+        "lambda/products/layers/productsEventsLayer/nodejs/productsEvents"
+      ],
+      "/opt/nodejs/ordersLayer": [
+        "lambda/orders/layers/ordersLayer/nodejs/ordersRepository"
+      ],
+      "/opt/nodejs/ordersApiLayer": [
+        "lambda/orders/layers/ordersApiLayer/nodejs/ordersApi"
+      ],
+    }
   },
   "exclude": [
     "node_modules",
